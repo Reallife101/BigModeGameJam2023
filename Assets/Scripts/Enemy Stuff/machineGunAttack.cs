@@ -16,6 +16,8 @@ public class machineGunAttack : Attacks
     int maxSpread;
     [SerializeField]
     float waitTime;
+    [SerializeField]
+    float facingDegrees;
 
     private AI ai;
 
@@ -47,7 +49,7 @@ public class machineGunAttack : Attacks
         }
 
 
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * degrees));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (degrees+facingDegrees)));
 
         if (degrees >= deg)
         {

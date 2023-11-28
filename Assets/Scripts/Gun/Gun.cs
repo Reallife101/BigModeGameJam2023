@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
 
     private Vector3 mousePos;
     private Camera cam;
-    private GunUI gunUI;
+    //private GunUI gunUI;
     [SerializeField] protected Bullet bullet;
     [SerializeField] private float fireDelay;
     [SerializeField] private float reloadDelay;
@@ -40,7 +40,7 @@ public class Gun : MonoBehaviour
         rClock = 0;
         inLoad = loadSize;
         cam = FindObjectOfType<Camera>();
-        gunUI = FindObjectOfType<GunUI>();
+        //gunUI = FindObjectOfType<GunUI>();
 
         input = new PlayerControllerInputAsset();
 
@@ -56,7 +56,7 @@ public class Gun : MonoBehaviour
 
     void OnEnable()
     {
-        gunUI.setMax(loadSize);
+        //gunUI.setMax(loadSize);
         playerShoot.Enable();
         playerAim.Enable();
         playerReload.Enable();
@@ -132,7 +132,7 @@ public class Gun : MonoBehaviour
     {
         fClock = fireDelay;
         inLoad -= 1;
-        gunUI.updateUI(inLoad);
+        //gunUI.updateUI(inLoad);
     }
 
     private void Aim(Vector2 dir, bool complete)
@@ -151,7 +151,7 @@ public class Gun : MonoBehaviour
     {
         inLoad = loadSize;
         rClock = reloadDelay;
-        FindObjectOfType<GunUI>().reload(reloadDelay);
+        //FindObjectOfType<GunUI>().reload(reloadDelay);
         FMODUnity.RuntimeManager.PlayOneShot(reloadSFX);
     }
 

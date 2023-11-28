@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     int currentHealth;
     [SerializeField] string enemyProjectileTag;
     [SerializeField] string borderTag;
-    bool invul = false;
+    public bool invul = false;
     [SerializeField] int invulTime;
     [SerializeField] float timeSlowTime = 0.75f;
 

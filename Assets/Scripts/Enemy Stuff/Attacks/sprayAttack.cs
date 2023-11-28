@@ -12,6 +12,8 @@ public class sprayAttack : Attacks
     float timeBetweenWaves;
     [SerializeField]
     bool alternate;
+    [SerializeField]
+    float facingDegrees;
 
     private AI ai;
 
@@ -30,31 +32,31 @@ public class sprayAttack : Attacks
 
     private void instantiateBullets()
     {
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-50)));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-40)));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-30)));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-20)));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-10)));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (10)));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (20)));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (30)));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (40)));
-        Instantiate(projectile, transform.position + transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (50)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-50+ facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-40 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-30 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-20 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (-10 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (10 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (20 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (30 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (40 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up* spawnInfront, transform.rotation* Quaternion.Euler(Vector3.forward* (50 + facingDegrees)));
     }
 
     private void instantiateBullets2()
     {
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-45)));
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-35)));
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-25)));
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-15)));
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-5)));
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (5)));
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (15)));
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (25)));
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (35)));
-        Instantiate(projectile, transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (45)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-45 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-35 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-25 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-15 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (-5 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (5 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (15 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (25 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (35 + facingDegrees)));
+        Instantiate(projectile, transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward * (45 + facingDegrees)));
     }
 
     IEnumerator waitEnable()

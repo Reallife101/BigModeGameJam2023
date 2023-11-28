@@ -14,6 +14,9 @@ public class burstAttack : Attacks
     [SerializeField]
     List<GameObject> projectiles;
 
+    [SerializeField]
+    float facingDegrees;
+
     private AI ai;
 
     private void Start()
@@ -33,7 +36,7 @@ public class burstAttack : Attacks
     {
         for (int i = 0; i < loopAmount; i++)
         {
-            Instantiate(projectiles[Random.Range(0,projectiles.Count)], transform.position + transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward));
+            Instantiate(projectiles[Random.Range(0,projectiles.Count)], transform.position - transform.up * spawnInfront, transform.rotation * Quaternion.Euler(Vector3.forward* facingDegrees));
             yield return new WaitForSeconds(waitTime);
         }
 

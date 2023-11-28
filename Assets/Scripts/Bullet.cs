@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
         if (enemy)
         {
             enemy.takeDamage(damage);
-            pointManager.PM_Instance.GainPoint(pointsOnHit);
+            //pointManager.PM_Instance.GainPoint(pointsOnHit);
             Destroy(gameObject);
         }
     }

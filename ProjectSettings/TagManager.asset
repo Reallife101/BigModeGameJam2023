@@ -8,6 +8,8 @@ TagManager:
   - Spawn
   - hurt
   - event
+  - FxTemporaire
+  - ground
   layers:
   - Default
   - TransparentFX
