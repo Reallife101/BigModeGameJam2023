@@ -963,9 +963,10 @@ MonoBehaviour:
   allAttacks:
   - {fileID: 495338216}
   - {fileID: 495338214}
-  - {fileID: 495338213}
-  - {fileID: 495338212}
   - {fileID: 495338211}
+  - {fileID: 495338212}
+  - {fileID: 495338210}
+  - {fileID: 495338209}
   phases:
   - {fileID: 11400000, guid: d67edfdb679335c4abd2b5f0e8e99c5d, type: 2}
   - {fileID: 11400000, guid: ff189162420eae346afe15a1aa2f980e, type: 2}
@@ -3778,6 +3779,7 @@ MonoBehaviour:
   maxMovement: {x: 17, y: 9}
   movementSmoothing: 0.05
   moveSpeed: 35
+  jumpForce: 0
 --- !u!114 &7457740718973466385
 MonoBehaviour:
   m_ObjectHideFlags: 0
