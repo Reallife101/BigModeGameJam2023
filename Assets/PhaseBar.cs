@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PhaseBar : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class PhaseBar : MonoBehaviour
     float currentHealth;
 
     [SerializeField]
-    GameObject[] cameras;
+    CinemachineVirtualCamera bossCam;
+    [SerializeField]
+    CinemachineVirtualCamera damageCam;
 
     private float elapsedTime;
 
@@ -25,6 +28,8 @@ public class PhaseBar : MonoBehaviour
 
     [SerializeField]
     float damageTimeLength;
+    [SerializeField]
+    GameObject clickers;
 
 
     // Start is called before the first frame update
@@ -34,11 +39,8 @@ public class PhaseBar : MonoBehaviour
         hb.setSlider(0);
         currentHealth = 0f;
 
-        foreach (GameObject go in cameras)
-        {
-            go.SetActive(false);
-        }
-        cameras[0].SetActive(true);
+        bossCam.Priority = 20;
+        damageCam.Priority = 5;
     }
 
     // Update is called once per frame
@@ -46,14 +48,10 @@ public class PhaseBar : MonoBehaviour
     {
         currentHealth += Time.deltaTime;
         hb.setSlider(currentHealth);
-        
+
         if (Input.GetKeyDown(KeyCode.E) && currentHealth >= maxHealth)
         {
-            foreach (GameObject go in cameras)
-            {
-                go.SetActive(false);
-            }
-            cameras[1].SetActive(true);
+            
             StartCoroutine(waitEnable());
 
         }
@@ -63,6 +61,12 @@ public class PhaseBar : MonoBehaviour
     {
         ph.invul = true;
         bossAI.canAttack = false;
+
+        bossCam.Priority = 5;
+        damageCam.Priority = 20;
+
+        float ticker=0;
+        elapsedTime = 0;
         while (elapsedTime < damageTimeLength)
         {
 
@@ -71,19 +75,29 @@ public class PhaseBar : MonoBehaviour
             elapsedTime += Time.deltaTime;
             bossAI.canAttack = false;
 
+            
+            ticker += Time.deltaTime;
+            if (ticker>1f)
+            {
+                ticker = 0;
+                Instantiate(clickers, Vector3.zero, Quaternion.identity);
+            }
+            
+
             // Yield here
             yield return null;
         }
         hb.setSlider(0);
 
-        foreach (GameObject go in cameras)
-        {
-            go.SetActive(false);
-        }
-        cameras[0].SetActive(true);
+        bossCam.Priority = 20;
+        damageCam.Priority = 5;
 
+
+        currentHealth = 0;
         yield return new WaitForSeconds(2.5f);
         ph.invul = false;
         bossAI.canAttack = true;
     }
+
+  
 }

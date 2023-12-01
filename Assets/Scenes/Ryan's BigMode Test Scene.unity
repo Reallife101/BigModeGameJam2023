@@ -1025,7 +1025,7 @@ MonoBehaviour:
   - {fileID: 495338210}
   - {fileID: 495338209}
   phases:
-  - {fileID: 11400000, guid: d67edfdb679335c4abd2b5f0e8e99c5d, type: 2}
+  - {fileID: 11400000, guid: aa10590eae4745d47b378eaf325e2762, type: 2}
   - {fileID: 11400000, guid: ff189162420eae346afe15a1aa2f980e, type: 2}
   - {fileID: 11400000, guid: 04dce0412278fb7449877e3b1c337fbd, type: 2}
   invincible: 0
@@ -4244,7 +4244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8214135371802597215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 32.3, z: -33}
+  m_LocalPosition: {x: 0, y: 0, z: -33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5035,12 +5035,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hb: {fileID: 8226213369283595560}
   maxHealth: 10
-  cameras:
-  - {fileID: 8214135371049275603}
-  - {fileID: 1170926465}
+  bossCam: {fileID: 8214135371049275613}
+  damageCam: {fileID: 1170926468}
   ph: {fileID: 6203723825951245057}
   bossAI: {fileID: 495338220}
   damageTimeLength: 10
+  clickers: {fileID: 2323671726432883848, guid: 51201fa4ce130424194ed396a5d66d02, type: 3}
 --- !u!114 &8226213369529288006
 MonoBehaviour:
   m_ObjectHideFlags: 0
