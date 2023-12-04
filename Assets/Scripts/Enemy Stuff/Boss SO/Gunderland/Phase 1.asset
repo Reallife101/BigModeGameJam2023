@@ -16,4 +16,4 @@ MonoBehaviour:
   BorderTrigger: oneThirdBorder
   maxHealth: 400
   bossPhase: 0
-  attackListIndex: 00000000010000000200000005000000
+  attackListIndex: 00000000

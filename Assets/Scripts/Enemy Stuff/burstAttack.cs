@@ -28,8 +28,6 @@ public class burstAttack : Attacks
     {
         coroutine = waitEnable();
         StartCoroutine(coroutine);
-
-
     }
 
     IEnumerator waitEnable()
