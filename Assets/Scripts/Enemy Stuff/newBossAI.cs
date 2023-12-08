@@ -24,6 +24,7 @@ public class newBossAI : AI
     [SerializeField]
     private List<BossPhaseSO> phases;
 
+    [SerializeField]
     private float delayBetweenAttacks;
 
     public bool invincible;
@@ -34,18 +35,17 @@ public class newBossAI : AI
 
     [SerializeField] private float timeStopLength;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        delayBetweenAttacks = 1;
         attackList = new List<Attacks>();
         timeElapsed = 0;
         currentPhase = 0;
         updatePhase();
     }
 
-
-    // Health Stuff
     public override void takeDamage(float dmg)
     {
         if (invincible)
@@ -83,18 +83,18 @@ public class newBossAI : AI
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth > Health / 2)
-        {
-            delayBetweenAttacks = 1;
-        }
-        else if (currentHealth > Health / 4)
-        {
-            delayBetweenAttacks = .5f;
-        }
-        else
-        {
-            delayBetweenAttacks = 0f;
-        }
+        //if (currentHealth > Health / 2)
+        //{
+        //    delayBetweenAttacks = 4;
+        //}
+        //else if (currentHealth > Health / 4)
+        //{
+        //    delayBetweenAttacks = .5f;
+        //}
+        //else
+        //{
+        //    delayBetweenAttacks = 0f;
+        //}
 
         if (canAttack)
         {
@@ -103,6 +103,7 @@ public class newBossAI : AI
             if (timeElapsed >= delayBetweenAttacks)
             {
                 attackList[Random.Range(0, attackList.Count)].atk();
+                anim.SetBool("isAttacking", true);
                 timeElapsed = 0;
                 canAttack = false;
             }

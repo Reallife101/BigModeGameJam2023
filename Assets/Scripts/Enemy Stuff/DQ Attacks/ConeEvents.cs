@@ -8,6 +8,8 @@ public class ConeEvents : MonoBehaviour
     private GameObject conePrefab;
     private Transform t;
 
+    public GameObject parentPrefab;
+
     private void Start()
     {
         t = GetComponentInParent<Transform>();
@@ -16,5 +18,10 @@ public class ConeEvents : MonoBehaviour
     {
         //shoots cone attack coming from Left to Right
         Instantiate(conePrefab, gameObject.transform.position, Quaternion.Euler(0, 0, -90 * transform.parent.localScale.x));
+    }
+
+    void DestroyObject()
+    {
+        Destroy(parentPrefab);
     }
 }

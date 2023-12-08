@@ -8,12 +8,10 @@ public class IceCreamHorizAttack : Attacks
     private GameObject horizAttackPrefab;
     [SerializeField]
     private float atkWaitTime = 4.8f;
-    private AI ai;
 
-    void Start()
-    {
-        ai = GetComponent<AI>();
-    }
+    [SerializeField]
+    private AI ai;
+    public Animator anim;
 
     public override void atk()
     {
@@ -25,8 +23,8 @@ public class IceCreamHorizAttack : Attacks
     {
         if (coroutine != null)
         {
-
             StopCoroutine(coroutine);
+            ai.canAttack = true;
         }
     }
 
@@ -36,5 +34,10 @@ public class IceCreamHorizAttack : Attacks
 
         yield return new WaitForSeconds(atkWaitTime);
         ai.canAttack = true;
+    }
+
+    public void resumeAnim()
+    {
+        anim.SetBool("isAttacking", false);
     }
 }
