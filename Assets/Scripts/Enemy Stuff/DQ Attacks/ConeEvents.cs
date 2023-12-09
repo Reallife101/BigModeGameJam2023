@@ -8,6 +8,9 @@ public class ConeEvents : MonoBehaviour
     private GameObject conePrefab;
     private Transform t;
 
+    [SerializeField]
+    private Transform spawnPos;
+
     public GameObject parentPrefab;
 
     private void Start()
@@ -17,10 +20,10 @@ public class ConeEvents : MonoBehaviour
     void SummonCone()
     {
         //shoots cone attack coming from Left to Right
-        Instantiate(conePrefab, gameObject.transform.position, Quaternion.Euler(0, 0, -90 * transform.parent.localScale.x));
+        Instantiate(conePrefab, spawnPos.position, Quaternion.Euler(0, 0, -90 * transform.parent.localScale.x));
     }
 
-    void DestroyObject()
+    void DestroyParentObject()
     {
         Destroy(parentPrefab);
     }

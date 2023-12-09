@@ -102,12 +102,21 @@ public class newBossAI : AI
 
             if (timeElapsed >= delayBetweenAttacks)
             {
-                attackList[Random.Range(0, attackList.Count)].atk();
-                anim.SetBool("isAttacking", true);
+                int currAttack = Random.Range(0, attackList.Count);
+                
+                if (currAttack == 0)
+                {
+                    anim.SetBool("isAttacking", true);
+                }
                 timeElapsed = 0;
                 canAttack = false;
             }
         }
+    }
+
+    public void HorizWaveAttack()
+    {
+        attackList[0].atk();
     }
 
     IEnumerator goNextPhase()
