@@ -6,7 +6,7 @@ public abstract class AI : MonoBehaviour
 {
     [SerializeField]
     public float Health;
-    public bool canAttack;
+    public bool canAttack = true;
 
     // Health Stuff
     public abstract void takeDamage(float dmg);

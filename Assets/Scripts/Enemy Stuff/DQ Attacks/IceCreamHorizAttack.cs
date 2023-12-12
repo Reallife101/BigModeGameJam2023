@@ -7,11 +7,13 @@ public class IceCreamHorizAttack : Attacks
     [SerializeField]
     private GameObject horizAttackPrefab;
     [SerializeField]
-    private float atkWaitTime = 4.8f;
+    private float atkWaitTime;
 
     [SerializeField]
     private AI ai;
     public Animator anim;
+
+    public GameObject parentPrefab;
 
     public override void atk()
     {
@@ -22,11 +24,6 @@ public class IceCreamHorizAttack : Attacks
     public override void stopAtk()
     {
         anim.SetBool("isAttacking", false);
-        if (coroutine != null)
-        {
-            StopCoroutine(coroutine);
-            ai.canAttack = true;
-        }
     }
 
     IEnumerator waitEnable()
