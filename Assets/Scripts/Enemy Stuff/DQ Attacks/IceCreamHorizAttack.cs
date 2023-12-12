@@ -21,6 +21,7 @@ public class IceCreamHorizAttack : Attacks
 
     public override void stopAtk()
     {
+        anim.SetBool("isAttacking", false);
         if (coroutine != null)
         {
             StopCoroutine(coroutine);
@@ -34,10 +35,5 @@ public class IceCreamHorizAttack : Attacks
 
         yield return new WaitForSeconds(atkWaitTime);
         ai.canAttack = true;
-    }
-
-    public void resumeAnim()
-    {
-        anim.SetBool("isAttacking", false);
     }
 }
