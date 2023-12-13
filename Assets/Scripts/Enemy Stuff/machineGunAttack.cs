@@ -30,8 +30,6 @@ public class machineGunAttack : Attacks
     {
         coroutine = spray1(waitTime, degrees, 0, true);
         StartCoroutine(coroutine);
-
-
     }
 
     IEnumerator spray1(float waitTime, float degrees, int currentBullet, bool down)

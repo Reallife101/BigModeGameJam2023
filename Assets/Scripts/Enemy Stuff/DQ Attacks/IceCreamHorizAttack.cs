@@ -29,7 +29,6 @@ public class IceCreamHorizAttack : Attacks
     IEnumerator waitEnable()
     {
         Instantiate(horizAttackPrefab);
-
         yield return new WaitForSeconds(atkWaitTime);
         ai.canAttack = true;
     }
