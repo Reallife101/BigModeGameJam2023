@@ -31,6 +31,11 @@ public class PhaseBar : MonoBehaviour
     [SerializeField]
     GameObject clickers;
 
+    public void addCurrentHealth(float f)
+    {
+        currentHealth += f;
+    }
+
 
     // Start is called before the first frame update
     void Start()

@@ -102,7 +102,14 @@ public class newBossAI : AI
 
             if (timeElapsed >= delayBetweenAttacks)
             {
-                anim.SetBool("isAttacking", true);
+                if (anim != null)
+                {
+                    anim.SetBool("isAttacking", true);
+                }
+                else
+                {
+                    HorizWaveAttack();
+                }
                 timeElapsed = 0;
                 canAttack = false;
             }

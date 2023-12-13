@@ -1028,8 +1028,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aa10590eae4745d47b378eaf325e2762, type: 2}
   - {fileID: 11400000, guid: ff189162420eae346afe15a1aa2f980e, type: 2}
   - {fileID: 11400000, guid: 04dce0412278fb7449877e3b1c337fbd, type: 2}
+  delayBetweenAttacks: 0
   invincible: 0
   timeStopLength: 1.2
+  anim: {fileID: 0}
 --- !u!1 &512304008
 GameObject:
   m_ObjectHideFlags: 0
@@ -5034,7 +5036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hb: {fileID: 8226213369283595560}
-  maxHealth: 10
+  maxHealth: 30
   bossCam: {fileID: 8214135371049275613}
   damageCam: {fileID: 1170926468}
   ph: {fileID: 6203723825951245057}
