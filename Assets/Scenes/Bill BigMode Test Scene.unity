@@ -907,6 +907,7 @@ MonoBehaviour:
   atkWaitTime: 3
   ai: {fileID: 495338220}
   anim: {fileID: 495338221}
+  parentPrefab: {fileID: 0}
 --- !u!212 &495338223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -975,6 +976,7 @@ MonoBehaviour:
   slashAttackPrefab: {fileID: 209846479873712663, guid: ba13938fae6b5c042ad8cd026336ab7f, type: 3}
   atkWaitTime: 1
   ai: {fileID: 495338220}
+  spawnPos: {fileID: 0}
   anim: {fileID: 495338221}
 --- !u!1 &512304008
 GameObject:
