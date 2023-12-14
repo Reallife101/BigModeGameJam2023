@@ -6,16 +6,17 @@ public class BarSlashAttack : Attacks
 {
     [SerializeField]
     private GameObject slashAttackPrefab;
+
     [SerializeField]
     private float atkWaitTime = 4.8f;
 
     [SerializeField]
     private AI ai;
 
-    [SerializeField]
-    private Transform spawnPos;
-
     public Animator anim;
+
+    [SerializeField]
+    private GameObject[] slashWarningPrefabList;
 
     public override void atk()
     {
@@ -33,13 +34,14 @@ public class BarSlashAttack : Attacks
         int flipSide = Random.Range(0, 2);
         if (flipSide == 0)
         {
-            GameObject newObject = Instantiate(slashAttackPrefab, transform.position, Quaternion.identity); 
+            GameObject newObject = Instantiate(slashAttackPrefab, transform.position, Quaternion.identity);
+            Instantiate(slashWarningPrefabList[0]);
         }
-
         if (flipSide == 1)
         {
             GameObject newObject = Instantiate(slashAttackPrefab, transform.position, Quaternion.identity);
             newObject.transform.localScale = new Vector3(-1, 1, 1);
+            Instantiate(slashWarningPrefabList[1]);
         }
         yield return new WaitForSeconds(atkWaitTime);
         ai.canAttack = true;
