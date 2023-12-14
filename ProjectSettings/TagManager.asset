@@ -10,6 +10,7 @@ TagManager:
   - event
   - FxTemporaire
   - ground
+  - boundary
   layers:
   - Default
   - TransparentFX
