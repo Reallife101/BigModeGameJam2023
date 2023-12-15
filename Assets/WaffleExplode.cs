@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Yarn.Unity;
 public class WaffleExplode : MonoBehaviour
 {
+    public DialogueTrigger dialogue;
     CircleCollider2D coll;
     Shrapnel shrapnel;
     [SerializeField] private float rocketExplosionTime;

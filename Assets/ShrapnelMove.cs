@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShrapnelMove : MonoBehaviour
 {
+    
     public float speed = 1f;
     public Rigidbody2D rb;
     public Vector2 direction;

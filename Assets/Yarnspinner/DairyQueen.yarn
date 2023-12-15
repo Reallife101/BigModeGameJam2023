@@ -1,0 +1,34 @@
+﻿title: Opening
+tags:
+---
+Get ready for a blizzard of pain!
+Get ready to rumble!
+===
+
+title: BeforeAttack
+position: -66,-170
+---
+Get out of my way or you’re going to get iced!
+===
+
+
+title: PlayerHurt
+position: 10,10
+---
+So you think you have what it takes to melt the ice cream queen?
+Are you feeling the chills yet?
+What’s the matter? Got a little brain freeze?
+===
+title: BossHurt
+position: 20,20
+---
+It’s going to take a lot more than that to melt me!
+===
+title: PlayerDeath
+position: 30,30
+---
+Defeat soft-served on a frozen plate of destruction.
+Maybe I should serve you an extra scoop of skill next time.
+Is someone melting under the pressure?
+===
+

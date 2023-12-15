@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public static event Action PlayerHitEvent;
     public static event Action PlayerHealEvent;
     public static event Action PlayerDeathEvent;
+
+    public DialogueTrigger dialogue;
     [SerializeField] int maxHealth;
     int currentHealth;
     [SerializeField] string enemyProjectileTag;
@@ -49,11 +51,13 @@ public class PlayerHealth : MonoBehaviour
         currentHealth--;
         TimeManager.Instance.TimeSlow(timeSlowTime);
         FMODUnity.RuntimeManager.PlayOneShot(takeDamageSound);
+        dialogue.TriggerPlayerHurtDialogue();
         if(currentHealth <= 0)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             PlayerDeathEvent?.Invoke();
             Destroy(gameObject);
+            dialogue.TriggerPlayerDeathDialogue();
         }
     }
 
