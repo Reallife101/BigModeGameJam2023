@@ -31,6 +31,12 @@ public class PhaseBar : MonoBehaviour
     [SerializeField]
     GameObject clickers;
 
+    [SerializeField]
+    private float summonShootRate;
+
+    [SerializeField]
+    private Canvas canvas;
+
     public void addCurrentHealth(float f)
     {
         currentHealth += f;
@@ -42,7 +48,7 @@ public class PhaseBar : MonoBehaviour
     {
         hb.sliderMax(maxHealth);
         hb.setSlider(0);
-        currentHealth = 0f;
+        currentHealth = maxHealth; // DEBUG LINE MAKE ZERO LATER 
 
         bossCam.Priority = 20;
         damageCam.Priority = 5;
@@ -74,7 +80,6 @@ public class PhaseBar : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < damageTimeLength)
         {
-
             currentHealth = Mathf.Lerp(maxHealth, 0, (elapsedTime / damageTimeLength));
             hb.setSlider(currentHealth);
             elapsedTime += Time.deltaTime;
@@ -82,13 +87,18 @@ public class PhaseBar : MonoBehaviour
 
             
             ticker += Time.deltaTime;
-            if (ticker>1f)
+            if (ticker>summonShootRate)
             {
                 ticker = 0;
-                Instantiate(clickers, Vector3.zero, Quaternion.identity);
+                float x = Random.Range(150f, Screen.width-150f);
+                float y = Random.Range(150f, Screen.height- 150f);
+                Vector2 newPosition = Camera.main.ScreenToWorldPoint(new Vector2(x, y));
+
+                //Instantiate(clickers, newPosition, Quaternion.identity);
+                
+                Instantiate(clickers, newPosition, Quaternion.identity, canvas.transform);
             }
             
-
             // Yield here
             yield return null;
         }
@@ -96,7 +106,6 @@ public class PhaseBar : MonoBehaviour
 
         bossCam.Priority = 20;
         damageCam.Priority = 5;
-
 
         currentHealth = 0;
         yield return new WaitForSeconds(2.5f);
