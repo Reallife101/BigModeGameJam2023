@@ -51,7 +51,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth--;
         TimeManager.Instance.TimeSlow(timeSlowTime);
         FMODUnity.RuntimeManager.PlayOneShot(takeDamageSound);
-        dialogue.TriggerPlayerHurtDialogue();
         if(currentHealth <= 0)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);

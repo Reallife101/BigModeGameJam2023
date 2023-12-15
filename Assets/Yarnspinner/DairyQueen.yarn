@@ -1,34 +1,53 @@
 ﻿title: Opening
 tags:
+position: -121,-33
 ---
 Get ready for a blizzard of pain!
-Get ready to rumble!
+<<wait 3s>>
+<<stop>>
 ===
 
-title: BeforeAttack
-position: -66,-170
+title: Dialogue1
+position: -120,-209
 ---
 Get out of my way or you’re going to get iced!
+<<wait 3>>
+<<stop>>
 ===
 
 
-title: PlayerHurt
-position: 10,10
+title: Dialogue2
+position: 136,223
 ---
 So you think you have what it takes to melt the ice cream queen?
-Are you feeling the chills yet?
-What’s the matter? Got a little brain freeze?
+<<wait 3>>
+<<stop>>
+
 ===
-title: BossHurt
-position: 20,20
+title: Dialogue3
+position: -199,203
 ---
-It’s going to take a lot more than that to melt me!
+Are you feeling the chills yet?
+<<wait 3>>
+<<stop>>
 ===
+
+title: Dialogue4
+position: 106,-169
+---
+What’s the matter? Got a little brain freeze?
+<<wait 3>>
+<<stop>>
+===
+
 title: PlayerDeath
-position: 30,30
+position: 73,-13
 ---
 Defeat soft-served on a frozen plate of destruction.
-Maybe I should serve you an extra scoop of skill next time.
-Is someone melting under the pressure?
+<<wait 3>>
+<<stop>>
 ===
+
+
+
 

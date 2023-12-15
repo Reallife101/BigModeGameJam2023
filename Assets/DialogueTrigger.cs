@@ -14,35 +14,44 @@ public class DialogueTrigger : MonoBehaviour
                 dialogueRunner.Stop();
             }
         dialogueRunner.StartDialogue("Opening");
+        StartCoroutine(dialogueStopTime());
         
     }
 
-    public void TriggerBeforeAttackDialogue()
+    public void TriggerDialogue1()
     {
         if (dialogueRunner.IsDialogueRunning)
             {
                 dialogueRunner.Stop();
             }
-        dialogueRunner.StartDialogue("BeforeAttack");
+        dialogueRunner.StartDialogue("Dialogue1");
     }
     
 
-    public void TriggerPlayerHurtDialogue()
+    public void TriggerDialogue2()
     {
         if (dialogueRunner.IsDialogueRunning)
             {
                 dialogueRunner.Stop();
             }
-        dialogueRunner.StartDialogue("PlayerHurt");
+        dialogueRunner.StartDialogue("Dialogue2");
     }
 
-    public void TriggerBossHurtDialogue()
+    public void TriggerDialogue3()
     {
         if (dialogueRunner.IsDialogueRunning)
             {
                 dialogueRunner.Stop();
             }
-        dialogueRunner.StartDialogue("BossHurt");
+        dialogueRunner.StartDialogue("Dialogue3");
+    }
+    public void TriggerDialogue4()
+    {
+        if (dialogueRunner.IsDialogueRunning)
+            {
+                dialogueRunner.Stop();
+            }
+        dialogueRunner.StartDialogue("Dialogue4");
     }
     public void TriggerPlayerDeathDialogue()
     {
@@ -51,5 +60,11 @@ public class DialogueTrigger : MonoBehaviour
                 dialogueRunner.Stop();
             }
             dialogueRunner.StartDialogue("PlayerDeath");
+    }
+
+    IEnumerator dialogueStopTime()
+    {
+        yield return new WaitForSeconds(2f);
+        dialogueRunner.Stop();
     }
 }

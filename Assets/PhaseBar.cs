@@ -5,6 +5,7 @@ using Cinemachine;
 
 public class PhaseBar : MonoBehaviour
 {
+    public DialogueTrigger dialogue;
     [SerializeField]
     private healthBar hb;
 
@@ -111,7 +112,26 @@ public class PhaseBar : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         ph.invul = false;
         bossAI.canAttack = true;
+        int dialogueNum = Random.Range(1, 5);
+        if(dialogueNum == 1)
+        {
+            dialogue.TriggerDialogue1();
+        }
+        else if(dialogueNum == 2)
+        {
+            dialogue.TriggerDialogue2();
+        }
+         else if(dialogueNum == 3)
+        {
+            dialogue.TriggerDialogue3();
+        }
+        else if(dialogueNum == 4)
+        {
+            dialogue.TriggerDialogue4();
+        }
     }
+
+
 
   
 }
