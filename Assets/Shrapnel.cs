@@ -7,6 +7,8 @@ public class Shrapnel : MonoBehaviour
     public Transform firePoint;
     public GameObject shrapnelPrefab;
     Vector2 direction;
+    
+    public float shrapnelWaitTime; // must be the same duration as rocketExplosionTime
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class Shrapnel : MonoBehaviour
 
     IEnumerator createShrapnel()
     {;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(shrapnelWaitTime);
         GameObject go = Instantiate(shrapnelPrefab, firePoint.position, Quaternion.identity);
         ShrapnelMove goShrapnel = go.GetComponent<ShrapnelMove>();
         goShrapnel.direction = direction;

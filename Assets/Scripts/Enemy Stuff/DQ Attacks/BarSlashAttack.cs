@@ -10,13 +10,17 @@ public class BarSlashAttack : Attacks
     [SerializeField]
     private float atkWaitTime = 4.8f;
 
-    [SerializeField]
     private AI ai;
-
-    public Animator anim;
+    private Animator anim;
 
     [SerializeField]
     private GameObject[] slashWarningPrefabList;
+
+    private void Start()
+    {
+        ai = GetComponent<newBossAI>();
+        anim = GetComponent<Animator>();
+    }
 
     public override void atk()
     {

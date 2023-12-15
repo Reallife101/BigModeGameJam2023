@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 495338224}
   - component: {fileID: 495338225}
   - component: {fileID: 495338215}
+  - component: {fileID: 495338226}
   m_Layer: 0
   m_Name: Boss
   m_TagString: hurt
@@ -728,6 +729,7 @@ MonoBehaviour:
   - {fileID: 495338222}
   - {fileID: 495338224}
   - {fileID: 495338225}
+  - {fileID: 495338226}
   phases:
   - {fileID: 11400000, guid: d67edfdb679335c4abd2b5f0e8e99c5d, type: 2}
   - {fileID: 11400000, guid: ff189162420eae346afe15a1aa2f980e, type: 2}
@@ -771,9 +773,6 @@ MonoBehaviour:
   projectile: {fileID: 0}
   horizAttackPrefab: {fileID: 2568573466681970448, guid: 4bc20420b7c08474c8752cba380fc3d2, type: 3}
   atkWaitTime: 2
-  ai: {fileID: 495338220}
-  anim: {fileID: 495338221}
-  parentPrefab: {fileID: 0}
 --- !u!212 &495338223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -841,8 +840,6 @@ MonoBehaviour:
   projectile: {fileID: 0}
   slashAttackPrefab: {fileID: 209846479873712663, guid: ba13938fae6b5c042ad8cd026336ab7f, type: 3}
   atkWaitTime: 0.5
-  ai: {fileID: 495338220}
-  anim: {fileID: 495338221}
   slashWarningPrefabList:
   - {fileID: 577569586972297437, guid: d10b389b793193d45b3523baf76b90cb, type: 3}
   - {fileID: 4474203921947614377, guid: a3ae4a5783e4a324ab1fc5d328f45b15, type: 3}
@@ -864,13 +861,26 @@ MonoBehaviour:
   - {fileID: 6635282260610975739}
   parentSpawnPos: {fileID: 8627164540993450300}
   bnanaFellasPrefab: {fileID: 213489693479823047, guid: 824c9c681fab0074a834e810c5feaa2e, type: 3}
-  anim: {fileID: 495338221}
   animWaitTime: 1.33
   bulletCount: 60
   bulletWaitTime: 0.05
   atkWaitTime: 0.1
-  ai: {fileID: 495338220}
   upDownStart: {fileID: 881814754}
+--- !u!114 &495338226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495338208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c8cc8fe275d75a41a7ac2f2fcfdaebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  waffleBombPrefab: {fileID: 3148328747212605611, guid: 5d40c94e8153a4943bfc738dcd171878, type: 3}
+  atkWaitTime: 2
 --- !u!1 &512304008
 GameObject:
   m_ObjectHideFlags: 0

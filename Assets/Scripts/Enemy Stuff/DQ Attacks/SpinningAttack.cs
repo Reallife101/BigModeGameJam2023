@@ -12,7 +12,7 @@ public class SpinningAttack : Attacks
 
     [SerializeField]
     private GameObject bnanaFellasPrefab;
-    public Animator anim;
+    private Animator anim;
 
     [SerializeField]
     private float animWaitTime; // cries
@@ -26,14 +26,14 @@ public class SpinningAttack : Attacks
     [SerializeField]
     private float atkWaitTime;
 
-    [SerializeField]
     private AI ai;
 
     public Animator upDownStart;
 
     private void Start()
     {
-        ai = GetComponent<AI>();
+        ai = GetComponent<newBossAI>();
+        anim = GetComponent<Animator>();
     }
 
     public override void atk()

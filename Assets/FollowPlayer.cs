@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -12,6 +12,7 @@ public class FollowPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
     }
 

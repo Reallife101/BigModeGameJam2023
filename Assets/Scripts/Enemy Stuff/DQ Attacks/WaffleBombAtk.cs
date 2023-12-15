@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceCreamHorizAttack : Attacks
+public class WaffleBombAtk : Attacks
 {
     [SerializeField]
-    private GameObject horizAttackPrefab;
+    private GameObject waffleBombPrefab;
     [SerializeField]
     private float atkWaitTime;
 
@@ -17,7 +17,6 @@ public class IceCreamHorizAttack : Attacks
         ai = GetComponent<newBossAI>();
         anim = GetComponent<Animator>();
     }
-
     public override void atk()
     {
         coroutine = waitEnable();
@@ -31,8 +30,9 @@ public class IceCreamHorizAttack : Attacks
 
     IEnumerator waitEnable()
     {
-        Instantiate(horizAttackPrefab);
+        Instantiate(waffleBombPrefab);
         yield return new WaitForSeconds(atkWaitTime);
         ai.canAttack = true;
     }
+
 }
