@@ -426,7 +426,7 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 0
   HasPlatforms: 0
-  sourceProjectPath: 
+  sourceProjectPath: ../../FMOD Studio/BillsGame/BillsGame.fspro
   sourceBankPath: Assets/FMODAssets
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5

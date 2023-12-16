@@ -27,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private float deathWaitTime = 2;
 
+    [SerializeField] FMODUnity.EventReference playerSound;
+
     private Animator anim;
     private SpriteRenderer sr;
     private CapsuleCollider2D ccol;
@@ -72,6 +74,7 @@ public class PlayerHealth : MonoBehaviour
         slider.value = currentHealth;
         if (currentHealth <= 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShot(playerSound);
             dzone.enabled = false;
             sr.enabled = false;
             ccol.enabled = false;

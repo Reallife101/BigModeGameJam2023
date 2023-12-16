@@ -40,6 +40,9 @@ public class PhaseBar : MonoBehaviour
     [SerializeField]
     private Canvas canvas;
 
+    [SerializeField] FMODUnity.EventReference hitSound;
+
+
     public GameObject animPrefab;
     public Animator animMeter;
     public void addCurrentHealth(float f)
@@ -72,6 +75,7 @@ public class PhaseBar : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && currentHealth >= maxHealth)
         {
+            FMODUnity.RuntimeManager.PlayOneShot(hitSound);
             Instantiate(animPrefab);
             bossShootModeSprite.enabled = true;
             StartCoroutine(waitEnable());

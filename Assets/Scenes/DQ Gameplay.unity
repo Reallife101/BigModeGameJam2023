@@ -3152,13 +3152,20 @@ MonoBehaviour:
   explosion: {fileID: 1134129239631916, guid: 93265c9fcdc18ad44bb3f5529e8d7404, type: 3}
   takeDamageSound:
     Guid:
-      Data1: 1778622714
-      Data2: 1090735637
-      Data3: 504589490
-      Data4: 2037519390
-    Path: event:/Player Damaged
+      Data1: 1693934916
+      Data2: 1252049304
+      Data3: 1523520954
+      Data4: -221950091
+    Path: event:/Explode
   slider: {fileID: 7579754453849450544}
   deathWaitTime: 2
+  playerSound:
+    Guid:
+      Data1: 1693934916
+      Data2: 1252049304
+      Data3: 1523520954
+      Data4: -221950091
+    Path: event:/Explode
   dZonePrefab: {fileID: 1374381303}
 --- !u!4 &6635282260610975739
 Transform:
@@ -4496,6 +4503,13 @@ MonoBehaviour:
   clickers: {fileID: 4690234500135924512, guid: 8e021ba60fdda2c48a6549303d3804e0, type: 3}
   summonShootRate: 0.75
   canvas: {fileID: 2147020786}
+  hitSound:
+    Guid:
+      Data1: 410716958
+      Data2: 1323906781
+      Data3: -790198624
+      Data4: -1919372520
+    Path: event:/Moo
   animPrefab: {fileID: 7358531122003938424, guid: 1aec321058e259544bd6cfec9a9df2f2, type: 3}
   animMeter: {fileID: 622379992}
 --- !u!114 &8226213369529288006
