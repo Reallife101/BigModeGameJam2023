@@ -768,6 +768,20 @@ MonoBehaviour:
   invincible: 0
   currentHealth: 200
   timeStopLength: 3
+  BossAttackSound:
+    Guid:
+      Data1: -620086732
+      Data2: 1087458740
+      Data3: 362686342
+      Data4: -1092781019
+    Path: event:/BossAttack
+  BossHurtSound:
+    Guid:
+      Data1: 66261095
+      Data2: 1149592108
+      Data3: 484369590
+      Data4: 1116288881
+    Path: event:/BossHurt
   anim: {fileID: 495338221}
   shootModeAnim: {fileID: 24691458}
 --- !u!95 &495338221

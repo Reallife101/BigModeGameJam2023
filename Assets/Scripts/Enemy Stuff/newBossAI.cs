@@ -36,6 +36,9 @@ public class newBossAI : AI
 
     [SerializeField] private float timeStopLength;
 
+    [SerializeField] FMODUnity.EventReference BossAttackSound;
+    [SerializeField] FMODUnity.EventReference BossHurtSound;
+
     public Animator anim;
     public Animator shootModeAnim;
 
@@ -55,6 +58,7 @@ public class newBossAI : AI
             return;
         }
         currentHealth -= dmg;
+        FMODUnity.RuntimeManager.PlayOneShot(BossHurtSound);
         slider.value = currentHealth;
 
         //if (currentHealth < 0)
@@ -110,10 +114,12 @@ public class newBossAI : AI
             {
                 if (anim != null)
                 {
+                    FMODUnity.RuntimeManager.PlayOneShot(BossAttackSound);
                     anim.SetBool("isAttacking", true);
                 }
                 else
                 {
+                    FMODUnity.RuntimeManager.PlayOneShot(BossAttackSound);
                     HorizWaveAttack();
                 }
                 timeElapsed = 0;
