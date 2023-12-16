@@ -24,15 +24,24 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] FMODUnity.EventReference takeDamageSound;
 
     public Slider slider;
-
+    [SerializeField]
+    private float deathWaitTime = 2;
 
     private Animator anim;
+    private SpriteRenderer sr;
+    private CapsuleCollider2D ccol;
+    public GameObject dZonePrefab;
+    private dangerZoneSpeedUp dzone;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
         slider.maxValue = maxHealth;
         currentHealth = maxHealth;
         slider.value = currentHealth;
+        sr = GetComponent<SpriteRenderer>();
+        ccol = GetComponent<CapsuleCollider2D>();
+        dzone = dZonePrefab.GetComponent<dangerZoneSpeedUp>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,10 +72,14 @@ public class PlayerHealth : MonoBehaviour
         slider.value = currentHealth;
         if (currentHealth <= 0)
         {
-            Instantiate(explosion, transform.position, Quaternion.identity);
-            PlayerDeathEvent?.Invoke();
-            Destroy(gameObject);
-            dialogue.TriggerPlayerDeathDialogue();
+            dzone.enabled = false;
+            sr.enabled = false;
+            ccol.enabled = false;
+            anim.SetTrigger("Dead");
+            anim.SetBool("isDead", true);
+            StartCoroutine(DeathWaitTime());
+            
+            //dialogue.TriggerPlayerDeathDialogue();
         }
     }
 
@@ -86,5 +99,11 @@ public class PlayerHealth : MonoBehaviour
         invul = true;
         yield return new WaitForSeconds(invulTime);
         invul = false;
+    }
+
+    IEnumerator DeathWaitTime()
+    {
+        yield return new WaitForSeconds(deathWaitTime);
+        SceneManagement.GameOver();
     }
 }

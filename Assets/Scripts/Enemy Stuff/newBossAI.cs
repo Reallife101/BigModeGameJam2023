@@ -97,6 +97,11 @@ public class newBossAI : AI
         //    delayBetweenAttacks = 0f;
         //}
 
+        if (currentHealth <= 0)
+        {
+            SceneManagement.WinScreen();
+        }
+
         if (canAttack)
         {
             timeElapsed += Time.deltaTime;

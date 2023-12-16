@@ -5,20 +5,32 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gunderland Scenes/Title.unity
     guid: d28112de06e68cc40b8fd3ae33f47505
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gunderland Scenes/OpeningCutscene.unity
     guid: 958ec9abf0bb2b143ab703c34fb31fba
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gunderland Scenes/Ryan's Scene.unity
     guid: 72e717b538b471742a91dbd4992facc8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gunderland Scenes/EndingCutscene.unity
     guid: 7e7c6bbcf319e164f86a5d35ed96d579
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gunderland Scenes/HitlessCutscene.unity
     guid: 3223c46be4ad1dd4d97c47e2171da10a
+  - enabled: 1
+    path: Assets/Scenes/DQ Game Over.unity
+    guid: 05f1150e4caba8d4098ae9367355eb28
+  - enabled: 1
+    path: Assets/Scenes/DQ Gameplay.unity
+    guid: ab66d4cd4ac0f5d408efe7cf4ceb5178
+  - enabled: 1
+    path: Assets/Scenes/DQ Main Menu.unity
+    guid: 34c562b86ad1e3e4aa8c318536a447ed
+  - enabled: 1
+    path: Assets/Scenes/DQ Win Screen.unity
+    guid: 8b34c9a5ff3d52841a7658f7b743c8fe
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a44b4f3620a152a41abbc4c699a559e0, type: 2}

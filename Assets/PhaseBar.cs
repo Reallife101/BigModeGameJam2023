@@ -75,8 +75,6 @@ public class PhaseBar : MonoBehaviour
             Instantiate(animPrefab);
             bossShootModeSprite.enabled = true;
             StartCoroutine(waitEnable());
-            animMeter.SetBool("isMeter", false);
-
         }
     }
 
@@ -118,7 +116,7 @@ public class PhaseBar : MonoBehaviour
 
         bossCam.Priority = 20;
         damageCam.Priority = 5;
-
+        animMeter.SetBool("isMeter", false);
         currentHealth = 0;
         yield return new WaitForSeconds(2.5f);
         ph.invul = false;
