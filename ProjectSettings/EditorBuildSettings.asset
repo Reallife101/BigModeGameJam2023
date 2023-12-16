@@ -21,14 +21,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Gunderland Scenes/HitlessCutscene.unity
     guid: 3223c46be4ad1dd4d97c47e2171da10a
   - enabled: 1
+    path: Assets/Scenes/DQ Main Menu.unity
+    guid: 34c562b86ad1e3e4aa8c318536a447ed
+  - enabled: 1
     path: Assets/Scenes/DQ Game Over.unity
     guid: 05f1150e4caba8d4098ae9367355eb28
   - enabled: 1
     path: Assets/Scenes/DQ Gameplay.unity
     guid: ab66d4cd4ac0f5d408efe7cf4ceb5178
-  - enabled: 1
-    path: Assets/Scenes/DQ Main Menu.unity
-    guid: 34c562b86ad1e3e4aa8c318536a447ed
   - enabled: 1
     path: Assets/Scenes/DQ Win Screen.unity
     guid: 8b34c9a5ff3d52841a7658f7b743c8fe
