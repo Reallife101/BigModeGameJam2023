@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class newBossAI : AI
 {
@@ -10,8 +11,7 @@ public class newBossAI : AI
     [SerializeField]
     private GameObject warning;
 
-    [SerializeField]
-    private healthBar hb;
+    public Slider slider;
 
     [SerializeField]
     private TMP_Text phaseName;
@@ -30,12 +30,14 @@ public class newBossAI : AI
     public bool invincible;
 
     private float timeElapsed;
+    [SerializeField]
     private float currentHealth;
     private int currentPhase;
 
     [SerializeField] private float timeStopLength;
 
     public Animator anim;
+    public Animator shootModeAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -52,27 +54,26 @@ public class newBossAI : AI
         {
             return;
         }
-
         currentHealth -= dmg;
-        hb.setSlider(currentHealth);
+        slider.value = currentHealth;
 
-        if (currentHealth < 0)
-        {
-            //attempt to stop any attacks
-            foreach (Attacks attack in attackList)
-            {
-                attack.stopAtk();
-            }
-            TimeManager.Instance.TimeSlow(timeStopLength);
-            StartCoroutine(goNextPhase());
-        }
+        //if (currentHealth < 0)
+        //{
+        //    //attempt to stop any attacks
+        //    foreach (Attacks attack in attackList)
+        //    {
+        //        attack.stopAtk();
+        //    }
+        //    TimeManager.Instance.TimeSlow(timeStopLength);
+        //    StartCoroutine(goNextPhase());
+        //}
 
     }
 
     public override void gainHealth(float hlth)
     {
         currentHealth += hlth;
-        hb.setSlider(currentHealth);
+        slider.value = currentHealth;
 
         if (currentHealth > Health)
         {
@@ -147,10 +148,10 @@ public class newBossAI : AI
 
     public void updatePhase()
     {
-        phaseName.text = phases[currentPhase].phaseName;
-        Health = phases[currentPhase].maxHealth;
+        //phaseName.text = phases[currentPhase].phaseName;
         currentHealth = Health;
-        hb.sliderMax(Health);
+        slider.maxValue = Health;
+        slider.value = currentHealth;
         //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossPhase", phases[currentPhase].bossPhase);
 
         // Clear old attacks and add new ones

@@ -26,36 +26,24 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            PlayerHit();
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            PlayerHealed();
-        }
+        //if (Input.GetKeyDown(KeyCode.G))
+        //{
+        //    PlayerHit();
+        //}
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    PlayerHealed();
+        //}
         
     }
 
     void PlayerHit()
     {
-        heartContainer[heartIndex].SetActive(false);
-        --heartIndex;
-        heartIndex = Mathf.Clamp(heartIndex, 0, heartContainer.Count - 1);
-
         if (flashbangCoroutine != null)
         {
             StopCoroutine(flashbangCoroutine);
         }
         flashbangCoroutine = StartCoroutine(Flashbang());
-    }
-
-    void PlayerHealed()
-    {
-
-        heartContainer[heartIndex].SetActive(true);
-        ++heartIndex;
-        heartIndex = Mathf.Clamp(heartIndex, 0, heartContainer.Count - 1);
     }
 
     IEnumerator Flashbang()

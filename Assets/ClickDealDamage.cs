@@ -19,11 +19,12 @@ public class ClickDealDamage : MonoBehaviour
 
     public void dealDamage()
     {
-        Debug.Log("BEANS!");
         if (canClick)
         {
             Debug.Log("Did Damage!");
             bossAI.takeDamage(dmg);
+            bossAI.shootModeAnim.SetTrigger("DQHurt");
+            Destroy(gameObject);
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class PlayerHealth : MonoBehaviour
@@ -16,22 +17,29 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] string borderTag;
     public bool invul = false;
     [SerializeField] int invulTime;
-    [SerializeField] float timeSlowTime = 0.75f;
+    [SerializeField] float timeSlowTime = 0.8f;
 
     [SerializeField]
     private GameObject explosion;
     [SerializeField] FMODUnity.EventReference takeDamageSound;
 
+    public Slider slider;
+
+
+    private Animator anim;
     private void Start()
     {
+        anim = GetComponent<Animator>();
+        slider.maxValue = maxHealth;
         currentHealth = maxHealth;
+        slider.value = currentHealth;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ((collision.gameObject.tag == enemyProjectileTag || collision.gameObject.tag == borderTag) && !invul)
         {
-            StartCoroutine(invincibilityCoroutine());
+            StartCoroutine(invincibilityCoroutine()); 
             TakeDamage();
         }
     }
@@ -47,11 +55,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void TakeDamage()
     {
+        anim.SetTrigger("PlayerHurt");
         PlayerHitEvent?.Invoke();
         currentHealth--;
         TimeManager.Instance.TimeSlow(timeSlowTime);
         FMODUnity.RuntimeManager.PlayOneShot(takeDamageSound);
-        if(currentHealth <= 0)
+        slider.value = currentHealth;
+        if (currentHealth <= 0)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             PlayerDeathEvent?.Invoke();

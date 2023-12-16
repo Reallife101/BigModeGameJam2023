@@ -21,6 +21,8 @@ public class PhaseBar : MonoBehaviour
 
     private float elapsedTime;
 
+    public SpriteRenderer bossShootModeSprite;
+
     [SerializeField]
     private PlayerHealth ph;
 
@@ -38,6 +40,8 @@ public class PhaseBar : MonoBehaviour
     [SerializeField]
     private Canvas canvas;
 
+    public GameObject animPrefab;
+    public Animator animMeter;
     public void addCurrentHealth(float f)
     {
         currentHealth += f;
@@ -49,7 +53,7 @@ public class PhaseBar : MonoBehaviour
     {
         hb.sliderMax(maxHealth);
         hb.setSlider(0);
-        currentHealth = maxHealth; // DEBUG LINE MAKE ZERO LATER 
+        currentHealth = 0; 
 
         bossCam.Priority = 20;
         damageCam.Priority = 5;
@@ -61,10 +65,17 @@ public class PhaseBar : MonoBehaviour
         currentHealth += Time.deltaTime;
         hb.setSlider(currentHealth);
 
+        if (currentHealth >= maxHealth)
+        {
+            animMeter.SetBool("isMeter", true);
+        }
+
         if (Input.GetKeyDown(KeyCode.E) && currentHealth >= maxHealth)
         {
-            
+            Instantiate(animPrefab);
+            bossShootModeSprite.enabled = true;
             StartCoroutine(waitEnable());
+            animMeter.SetBool("isMeter", false);
 
         }
     }
@@ -112,6 +123,7 @@ public class PhaseBar : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         ph.invul = false;
         bossAI.canAttack = true;
+        bossShootModeSprite.enabled = false;
         int dialogueNum = Random.Range(1, 5);
         if(dialogueNum == 1)
         {
