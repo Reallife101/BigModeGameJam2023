@@ -77,6 +77,7 @@ public class PhaseBar : MonoBehaviour
         {
             FMODUnity.RuntimeManager.PlayOneShot(hitSound);
             Instantiate(animPrefab);
+            ph.invul = true;
             bossShootModeSprite.enabled = true;
             StartCoroutine(waitEnable());
         }
