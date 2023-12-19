@@ -887,8 +887,8 @@ MonoBehaviour:
   slashAttackPrefab: {fileID: 209846479873712663, guid: ba13938fae6b5c042ad8cd026336ab7f, type: 3}
   atkWaitTime: 0.5
   slashWarningPrefabList:
-  - {fileID: 577569586972297437, guid: d10b389b793193d45b3523baf76b90cb, type: 3}
-  - {fileID: 4474203921947614377, guid: a3ae4a5783e4a324ab1fc5d328f45b15, type: 3}
+  - {fileID: 769658369548984719, guid: ab61cf5c3f4000c4f99f1109e61d3ef7, type: 3}
+  - {fileID: 4978684618624586516, guid: 85739559583278d48b3e109fcf519bd4, type: 3}
 --- !u!114 &495338225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3333,13 +3333,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7457740718973466383}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Parameter: timeSlow
+  Parameter: 
   TriggerEvent: 11
   Value: 1
 --- !u!114 &7457740718973466386
@@ -3349,7 +3349,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7457740718973466383}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -3357,11 +3357,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1594743775
-      Data2: 1160885741
-      Data3: 1862155446
-      Data4: -2060363161
-    Path: event:/Music/Queen of Farts
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   Event: 
   PlayEvent: 1
   StopEvent: 2
